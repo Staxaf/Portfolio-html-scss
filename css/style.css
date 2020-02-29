@@ -1,0 +1,335 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400|Raleway:400,500,600,800&display=swap");
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Montserrat";
+  color: black;
+}
+
+header {
+  background: url(../img/bg.jpg);
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway";
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.button {
+  padding: 10px 30px;
+  background: #a79783;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: "Raleway";
+  font-weight: 700;
+  text-transform: uppercase;
+  -webkit-transition: 0.4s ease;
+  /* Safari and Chrome */
+  -moz-transition: 0.4s ease;
+  /* Firefox 4 */
+  -o-transition: 0.4s ease;
+  /* Opera */
+}
+
+.button:hover {
+  background: #746757;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+.main-menu {
+  padding-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main-menu .main-menu__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: -15px;
+}
+
+.main-menu .main-menu__nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.main-menu .main-menu__nav ul a {
+  margin-left: 30px;
+  font-size: 14px;
+  font-weight: 300;
+  -webkit-transition: 0.4s ease;
+  /* Safari and Chrome */
+  -moz-transition: 0.4s ease;
+  /* Firefox 4 */
+  -o-transition: 0.4s ease;
+  /* Opera */
+}
+
+.main-menu .main-menu__nav ul a:hover {
+  color: #a79783;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+.main-menu .main-menu__nav .icons {
+  margin-left: 60px;
+}
+
+.main-menu .main-menu__nav .icons a:nth-child(2) {
+  margin-left: 25px;
+}
+
+.main-header {
+  text-align: center;
+  padding: 270px 0;
+}
+
+.main-header h2 {
+  font-size: 36px;
+  font-weight: 500;
+  color: white;
+}
+
+.main-header h1 {
+  font-size: 52px;
+  font-weight: 700;
+  color: white;
+}
+
+.main-header p {
+  max-width: 55%;
+  margin: 0 auto;
+  margin-bottom: 60px;
+  font-weight: 300;
+  margin-top: 30px;
+  color: white;
+}
+
+.dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dots .dot {
+  width: 12px;
+  height: 12px;
+  background: #8f9091;
+  border-radius: 50%;
+  margin-left: 8px;
+  border: 2px transparent solid;
+  cursor: pointer;
+}
+
+.dots .active, .dots .dot:hover {
+  background: black;
+  border: 2px white solid;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+.arrows {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  bottom: 25rem;
+}
+
+.arrows .prev, .arrows .next {
+  position: relative;
+  font-size: 35px;
+  color: #8f9091;
+  cursor: pointer;
+}
+
+.arrows .prev:hover, .arrows .next:hover {
+  color: white;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+.arrows .prev {
+  left: 7%;
+}
+
+.arrows .next {
+  right: 7%;
+}
+
+.skills {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 85px;
+  text-align: center;
+  margin-bottom: 150px;
+}
+
+.skills .skills__item {
+  margin-left: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.skills .skills__item i {
+  font-size: 60px;
+  margin-bottom: 15px;
+  color: #555555;
+}
+
+.skills .skills__item h4 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #555555;
+}
+
+.skills .skills__item p {
+  color: #8f9091;
+  line-height: 23px;
+  max-width: 100%;
+}
+
+.skills .skills__item:hover {
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+.skills .skills__item:hover i, .skills .skills__item:hover h4, .skills .skills__item:hover p {
+  color: #a79783;
+}
+
+.skills .skills__item:hover :after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 30%;
+  height: 2px;
+  margin-left: -15%;
+  background: #a79783;
+}
+
+.title {
+  text-align: center;
+}
+
+.title h3 {
+  color: #555555;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.title p {
+  max-width: 70%;
+  margin: 0 auto;
+  color: #8f9091;
+}
+
+.pictures {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+.pictures .pictures__item {
+  overflow: hidden;
+}
+
+.theme {
+  padding: 40px 20px;
+  background: -webkit-gradient(linear, left top, right top, from(#211b19), to(#4e3427));
+  background: linear-gradient(90deg, #211b19 0%, #4e3427 100%);
+  margin-bottom: 80px;
+}
+
+.purchase {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.purchase h3 {
+  font-size: 28px;
+  color: white;
+}
+
+.purchase h3 span {
+  color: #a79783;
+}
+
+.purchase p {
+  font-size: 16px;
+  color: #746757;
+  margin-top: 10px;
+}
+
+.button-tag {
+  font-size: 14px;
+  color: black;
+  font-weight: 300;
+}
+
+.tags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tags .tags__item {
+  border: 1px #8f9091 solid;
+}
+
+.tags .tags__item a {
+  padding: 10px 25px;
+}
+/*# sourceMappingURL=style.css.map */
