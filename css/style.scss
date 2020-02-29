@@ -1,12 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400|Raleway:400,500,600,800&display=swap');
 // Variables
 $main-color: #a79783;
+$main-light-color: #c7b299;
 $hover-color: #746757;
 $secondary-color: #8f9091;
 $secondary-dark-color: #555555;
 $title-font: 'Raleway';
 $common-font: 'Montserrat';
-$trans-common: '0.4s';
+$trans-common: 0.4s;
+
+//Mixins
+@mixin post-animation($duration){
+    -webkit-transition: $duration ease; /* Safari and Chrome */
+    -moz-transition: $duration ease; /* Firefox 4 */
+    -o-transition: $duration ease; /* Opera */
+    transition: $duration ease;
+}
 // Common styles for selectors
 body{
     box-sizing: border-box;
@@ -15,7 +24,8 @@ body{
 }
 header{
     //padding-top: 40px;
-    background: url(../img/bg.jpg);
+    background: url(../img/bg.jpg) no-repeat;
+    background-size: cover;
     min-height: 100vh;
 }
 a{
@@ -31,6 +41,7 @@ h1,h2,h3,h4,h5,h6{
     padding: 0 40px;
 }
 .button{
+    @include post-animation($trans-common);
     padding: 10px 30px;
     background: $main-color;
     border-radius: 5px;
@@ -38,13 +49,10 @@ h1,h2,h3,h4,h5,h6{
     font-family: $title-font;
     font-weight: 700;
     text-transform: uppercase;
-    -webkit-transition: 0.4s ease; /* Safari and Chrome */
-    -moz-transition: 0.4s ease; /* Firefox 4 */
-    -o-transition: 0.4s ease; /* Opera */
 }
 .button:hover{
     background: $hover-color;
-    transition: 0.4s ease;
+    
 }
 
 // Header
@@ -52,6 +60,9 @@ h1,h2,h3,h4,h5,h6{
     padding-top: 40px;
     display: flex;
     justify-content: space-between;
+    .main-menu__logo{
+        cursor: pointer;
+    }
     .main-menu__nav{
         display: flex;
         align-items: center;
@@ -60,16 +71,13 @@ h1,h2,h3,h4,h5,h6{
             display: flex;
             flex-wrap: wrap;
             a{
+                @include post-animation($trans-common);
                 margin-left: 30px;
                 font-size: 14px;
                 font-weight: 300;
-                -webkit-transition: 0.4s ease; /* Safari and Chrome */
-                -moz-transition: 0.4s ease; /* Firefox 4 */
-                -o-transition: 0.4s ease; /* Opera */
             }
             a:hover{
                 color: $main-color;
-                transition: 0.4s ease;
             }
         }
         .icons{
@@ -108,6 +116,7 @@ h1,h2,h3,h4,h5,h6{
     justify-content: center;
     align-items: center;;
     .dot{
+        @include post-animation($trans-common);
         width: 12px;
         height: 12px;
         background: $secondary-color;
@@ -119,7 +128,6 @@ h1,h2,h3,h4,h5,h6{
     .active, .dot:hover{
         background: black;
         border: 2px white solid;
-        transition: 0.4s ease;
     }
 }
 .arrows{
@@ -128,6 +136,7 @@ h1,h2,h3,h4,h5,h6{
     position: relative;
     bottom: 25rem;
     .prev,.next{
+        @include post-animation($trans-common);
         position: relative;
         font-size: 35px;
         color: $secondary-color;
@@ -135,7 +144,6 @@ h1,h2,h3,h4,h5,h6{
     }
     .prev:hover, .next:hover{
         color: white;
-        transition: 0.4s ease;
     }
     .prev{
         left: 7%;
@@ -153,30 +161,34 @@ h1,h2,h3,h4,h5,h6{
     text-align: center;
     margin-bottom: 150px;
     .skills__item{
+        @include post-animation($trans-common);
         margin-left: 20px;
         padding-bottom: 20px;
         position: relative;
         cursor: pointer;
         
         i{
+            @include post-animation($trans-common);
             font-size: 60px;
             margin-bottom: 15px;
             color: $secondary-dark-color
         }
         h4{
+            @include post-animation($trans-common);
             font-size: 22px;
             font-weight: 600;
             margin-bottom: 10px;
             color: $secondary-dark-color;
         }
         p{
+            @include post-animation($trans-common);
             color: $secondary-color;
             line-height: 23px;
             max-width: 100%;
         }
     }
     .skills__item:hover{
-        transition: 0.4s ease;
+        
         i,h4,p{
             color: $main-color;
         }
@@ -217,6 +229,10 @@ h1,h2,h3,h4,h5,h6{
     
     .pictures__item{
         overflow: hidden;
+        display: flex;
+    }
+    .pictures__item__center{
+        display: flex;
     }
 }
 // Fourth screen
@@ -252,12 +268,219 @@ h1,h2,h3,h4,h5,h6{
 }
 .tags{
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    margin-bottom: 40px;
     .tags__item{
-        border: 1px $secondary-color solid;
-        
+        margin-left: 20px;
         a{
-            padding: 10px 25px;
+            @include post-animation($trans-common);
+            border: 1px $secondary-color solid;
+            padding: 5px 25px;
+        }
+        .active-item, a:hover{
+            @include post-animation($trans-common);
+            color: white;
+            background-color: $main-color;
+        }
+        .active-item:hover{
+            background-color: $hover-color;
         }
     }
 }
-  
+.projects{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .projects__item{
+        margin-left: 10px;
+        margin-bottom: 30px;
+        cursor: pointer;
+        .projects__img{
+            position: relative;
+            @include post-animation($trans-common);
+            display: flex;
+            img{
+                @include post-animation($trans-common);
+            }
+            .projects__icons{
+                
+                i{
+                    @include post-animation($trans-common);
+                    position: absolute;
+                    left:50%;
+                    top:50%;
+                    font-size: 25px;
+                    opacity: 0;
+                    color: $hover-color;
+                }
+                .link{
+                    margin-left: 20px;
+                }
+                .search{
+                    margin-left: -20px;
+                }
+            }
+        }
+        .projects__subtitle{
+            @include post-animation($trans-common);
+            padding: 25px 30px;
+            h5{
+                @include post-animation($trans-common);
+                font-size: 20px;
+                color: $main-color;
+            }
+            p{
+                @include post-animation($trans-common);
+                font-size: 14px;
+                color: $main-color;
+                font-weight: 300;
+                margin-top: 10px
+            }
+        }
+    }
+    .projects__item:hover{
+        .projects__subtitle{
+            background-color: $hover-color;
+        }
+        h5,p{
+            color: white;
+        }
+        .projects__img{
+            background: rgba(0,0,0,1);
+            img{
+                opacity: 0.4;
+                -moz-opacity:0.8;
+                filter: alpha(opacity=80) black;
+                -khtml-opacity: 0.8;
+            }
+            .projects__icons i {
+                opacity: 1;
+            }
+            .projects__icons i:hover{
+                color: white;
+            }
+        }
+    }
+}
+.learn-more{
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+// Sixth screen
+
+.block-video{
+    max-width: 100%;
+    text-align: center;
+    position: relative;
+    background: url(../img/vid-photo.jpg) no-repeat;
+    video{
+        opacity: 0;
+    }
+    .title-vid{
+        position: absolute;
+        text-align: center;
+        bottom:30%;
+        left: 20%;
+        .icon-play{
+            // display: flex;
+            // align-items: center;
+            // justify-content: center;
+            // background-color: rgba(0,0,0,0.4);
+            // border-radius: 50%;
+            // width: 90px;
+            // height: 90px;
+            // margin: 0 auto;
+            // cursor: pointer;
+            i{
+                cursor: pointer;
+                @include post-animation($trans-common);
+                font-size: 70px;
+                color: white;
+                margin-bottom: 30px;
+            }
+            i:hover{
+                color: $secondary-color;
+            }
+        }
+        h3{
+            color: white;
+            font-size: 30px;
+            font-weight: 500;
+        }
+        p{
+            color: white;
+            font-size: 16px;
+            font-weight: 300;
+            max-width: 70%;
+            margin: 0 auto;
+            line-height: 25px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .vid-time{
+            color: $main-color;
+            font-size: 14px;
+        }
+    }
+}
+
+// Seventh screen
+
+.mobile-features{
+    display: flex;
+    margin-top: 80px;
+    align-items: center;
+    .mobile-features__text{
+        text-align: left;  
+        p{
+            max-width: 100%;
+            line-height: 25px;
+        }  
+        ul{
+            margin-top: 40px;
+            margin-left: 50px;
+            li{
+                margin-top: 10px;
+                .mobile-features__list{
+                    display: flex;
+                    align-items: center;
+                    .pointer{
+                        background: $main-light-color;
+                        border-radius: 50%;
+                        width: 20px;
+                        height: 20px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: white;
+                        margin-right: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Eighth screen
+
+.counts{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    .counter{
+        font-size: 48px;
+        color: white;
+        font-weight: 200;
+        margin-bottom: 20px;
+    }
+    p{
+        color: $main-color;
+        font-size: 14px;
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+}
