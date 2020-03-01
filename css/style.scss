@@ -36,7 +36,7 @@ h1,h2,h3,h4,h5,h6{
     font-family: $title-font;
 }
 .container{
-    max-width: 1140px;
+    max-width: 1180px;
     margin: 0 auto;
     padding: 0 40px;
 }
@@ -156,10 +156,12 @@ h1,h2,h3,h4,h5,h6{
 
 .skills{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 85px;
     text-align: center;
     margin-bottom: 150px;
+    flex-wrap: unset;
+    flex-wrap: wrap;
     .skills__item{
         @include post-animation($trans-common);
         margin-left: 20px;
@@ -184,7 +186,6 @@ h1,h2,h3,h4,h5,h6{
             @include post-animation($trans-common);
             color: $secondary-color;
             line-height: 23px;
-            max-width: 100%;
         }
     }
     .skills__item:hover{
@@ -226,13 +227,18 @@ h1,h2,h3,h4,h5,h6{
     align-items: flex-end;
     margin-top: 40px;
     margin-bottom: 0;
+    img{
+        max-width: 100%;
+    }
     
     .pictures__item{
         overflow: hidden;
         display: flex;
+        
     }
     .pictures__item__center{
         display: flex;
+        
     }
 }
 // Fourth screen
@@ -245,6 +251,7 @@ h1,h2,h3,h4,h5,h6{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     h3{
         font-size: 28px;
         color: white;
@@ -379,6 +386,7 @@ h1,h2,h3,h4,h5,h6{
     background: url(../img/vid-photo.jpg) no-repeat;
     video{
         opacity: 0;
+        max-width: 100%;
     }
     .title-vid{
         position: absolute;
@@ -434,6 +442,7 @@ h1,h2,h3,h4,h5,h6{
     display: flex;
     margin-top: 80px;
     align-items: center;
+    
     .mobile-features__text{
         text-align: left;  
         p{
@@ -446,16 +455,15 @@ h1,h2,h3,h4,h5,h6{
             li{
                 margin-top: 10px;
                 .mobile-features__list{
-                    display: flex;
-                    align-items: center;
+                    
                     .pointer{
+                        float: left;
                         background: $main-light-color;
                         border-radius: 50%;
                         width: 20px;
                         height: 20px;
                         display: flex;
                         justify-content: center;
-                        align-items: center;
                         color: white;
                         margin-right: 30px;
                     }
@@ -482,5 +490,209 @@ h1,h2,h3,h4,h5,h6{
         font-size: 14px;
         font-weight: 300;
         text-transform: uppercase;
+    }
+}
+
+// Nineth screen
+
+.posts{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    margin-bottom: 140px;
+    .posts__item{
+        cursor: pointer;
+        margin-left: 20px;
+        margin-bottom: 10px;
+        .posts__item__img{
+            @include post-animation($trans-common);
+            display: flex;
+            position: relative;
+            img{
+                @include post-animation($trans-common);
+            }
+            .posts__date{
+                position: absolute;
+                left: 5%;
+                bottom: 65%;
+                text-align: center;
+                
+                p{
+                    @include post-animation($trans-common);
+                    color: white;
+                }
+                .posts__date__day{
+                    background: $secondary-dark-color;
+                    padding: 5px;
+                    font-size: 24px;
+                    font-weight: 100;
+                    border-top-left-radius: 3px;
+                    border-top-right-radius: 3px;
+                }
+                .posts__date__month{
+                    font-size: 12px;
+                    font-family: $title-font;
+                    background:black;
+                    padding: 5px;
+                    border-bottom-left-radius: 3px;
+                    border-bottom-right-radius: 3px;
+                }
+            }
+        }
+        .posts__text{
+            @include post-animation($trans-common);
+            padding: 30px;
+            h5{
+                font-size: 20px;
+                color: $secondary-dark-color;
+                margin-bottom: 10px;
+            }
+            p{
+                @include post-animation($trans-common);
+                font-size: 14px;
+                font-weight: 300;
+                margin-bottom: 15px;
+            }
+            a{
+                color: $main-color;
+                font-size: 14px;
+                font-weight: 300;
+            }
+        }
+
+    }
+    .posts__item:hover{
+        .posts__item__img{
+            background: rgba(0,0,0,1);
+        }
+        .posts__date{
+            .posts__date__day{
+                background-color: $main-color;
+            }
+            .posts__date__month{
+                background-color: $hover-color;
+            }
+        }
+        img{
+            opacity: 0.4;
+            -moz-opacity:0.8;
+            filter: alpha(opacity=80) black;
+            -khtml-opacity: 0.8;
+        }
+        .posts__text{
+            background-color: #50473b;
+            h5{
+                color: $main-color
+            }
+            p{
+                color: white;
+            }
+        }
+    }
+}
+
+//Tenth screen
+
+
+.bg-paralax{
+    background: url(../img/bg-paralax.jpg) no-repeat;
+    background-attachment: fixed;
+}
+.logos{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    img{
+        margin-left: 30px;
+    }
+}
+.bg-dark{
+    background: rgba(0,0,0,0.5);
+    padding: 130px 0;
+}
+
+// Eleventh screen
+
+.news{
+    display: flex;
+    justify-content: space-between;
+}
+.dark-theme{
+    background: rgb(31, 31, 31);
+    padding: 75px;
+}
+.news{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .news__item{
+        flex: 1 1 12.5%;
+        margin-left: 20px;
+        h4{
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            margin-top: 20px;
+        }
+        h6{
+            @include post-animation($trans-common);
+            color: $secondary-dark-color;
+        }
+        p{
+            @include post-animation($trans-common);
+            color: $secondary-color;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 23px;
+        }
+        .news__post{
+            @include post-animation($trans-common);
+            cursor: pointer;
+            padding-bottom: 25px;
+            border-bottom: 0.5px $secondary-dark-color solid;
+            margin-bottom: 10px;
+        }
+        .news__post:hover{
+            p{
+                color: $main-color;
+            }
+            h6{
+                color: white;
+            }
+        }
+    }
+}
+
+// Footer
+
+footer{
+    background: black;
+    padding: 40px 0;
+}
+.footer__main{
+    display: flex;
+    justify-content: space-between;
+    color: $secondary-color;
+    .footer__list{
+
+        ul{
+            display: flex;
+            li{
+                @include post-animation($trans-common);
+                margin-left: 20px;
+                font-size: 13px;
+                font-weight: 300;
+                cursor: pointer;
+                span{
+                    color: white;
+                }
+            }
+            li:hover{
+                color: $main-light-color;
+            }
+        }
     }
 }
