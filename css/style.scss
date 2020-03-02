@@ -792,3 +792,17 @@ footer{
         }
     }
 }
+@media screen and (max-width: 600px){
+    .main-header{
+        padding: 100px 0;
+        h2{
+            font-size: 26px;
+        }
+        h1{
+            font-size: 36px;
+        }
+    }
+    .arrows{
+        bottom: 13rem;
+    }
+}
